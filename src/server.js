@@ -1,26 +1,8 @@
 require('dotenv').config()
+import { Router } from './router/router'
 
-const { Sequelize, DataTypes } = require('sequelize')
+// Deliverer.create({email: 'emaildoentrega@email.com'})
 
-const db = process.env.DATABASE_URL
-const seq = new Sequelize(db)
-
-const Deliverer = seq.define('deliverer', {
-  email: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
-  name: {
-    type: DataTypes.STRING
-  }
-}, {
-  freezeTableName: true,
-  timestamps: false
+Router.listen(8000, () => {
+  console.log('express listening on 8000')
 })
-
-seq.authenticate()
-  .then(() => {
-    console.log('CONNECTED ON' + db)
-    Deliverer.create({email: 'Entregador 1'})
-  })
-  .catch(err => console.error('CONNECTION ERROR: ', err))
