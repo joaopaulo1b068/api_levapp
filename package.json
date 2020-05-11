@@ -7,7 +7,7 @@
     "build": "babel src --out-dir dist",
     "migrate": "npx sequelize-cli db:migrate",
     "start": "npx sequelize-cli db:migrate && node -r dotenv/config dist/server.js",
-    "dev": "concurrently \"babel src --watch --out-dir dist\"  \"nodemon dist/server.js\"",
+    "dev": "concurrently \"babel src --watch --out-dir dist\"  \"nodemon -r dotenv/config dist/server.js\"",
     "test": "jest"
   },
   "author": "joaop",
@@ -27,11 +27,16 @@
     "@babel/plugin-transform-runtime": "^7.9.6",
     "@babel/runtime": "^7.9.6",
     "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "helmet": "^3.22.0",
+    "jsonwebtoken": "^8.5.1",
     "moment": "^2.25.3",
     "pg": "^8.0.3",
     "pg-hstore": "^2.3.3",
-    "sequelize": "^5.21.7"
+    "sequelize": "^5.21.7",
+    "uuid": "^8.0.0",
+    "yup": "^0.28.5"
   }
 }
