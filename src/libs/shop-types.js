@@ -1,0 +1,1 @@
+export const ShopTypesAllowed = ['LANCHONETE', 'PIZZARIA', 'DOCERIA', 'AGUAGAS', 'REFEICAO']
