@@ -1,6 +1,7 @@
-const { DataTypes, Sequelize } = require('sequelize')
-const db = 'postgres://user:pass@0.0.0.0:5432/postgres'
-const seq = new Sequelize(db)
+import { Database } from '../database/database'
+
+const { DataTypes } = require('sequelize')
+const seq = Database.getInstance()
 
 export const Deliverer = seq.define('deliverer', {
   email: {
