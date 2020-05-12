@@ -7,4 +7,4 @@ module.exports = {
   down: (queryInterface, Sequelize) => {
    return queryInterface.removeColumn('deliverer', 'uid', Sequelize.STRING)
   }
-};
+}
