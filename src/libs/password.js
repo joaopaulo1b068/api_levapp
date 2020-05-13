@@ -17,3 +17,18 @@ export function HashPass(raw, salt = GetID(10, 'numeric'), interactions = 1000, 
     }
 
 }
+
+
+export function SplitPass(str) {
+    // example => 8872230701&2fe413f2d9c8f5b55cc790ec13980a4c&1000&16&sha512
+    const arr = str.split('&')
+    return {
+        salt: arr[0] || '',
+        hash: arr[1] || '',
+        interactions: arr[2] || '',
+        keylen: arr[3] || '',
+        digest: arr[4] || '',
+    }
+
+
+}
