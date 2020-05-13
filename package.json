@@ -8,7 +8,7 @@
     "migrate": "npx sequelize-cli db:migrate",
     "start": "npx sequelize-cli db:migrate && node -r dotenv/config dist/server.js",
     "dev": "concurrently \"babel src --watch --out-dir dist\"  \"nodemon -r dotenv/config dist/server.js\"",
-    "test": "jest"
+    "test": "jest --watch"
   },
   "author": "joaop",
   "license": "ISC",
@@ -21,7 +21,9 @@
     "concurrently": "^5.2.0",
     "jest": "^26.0.1",
     "nodemon": "^2.0.3",
-    "sequelize-cli": "^5.5.1"
+    "sequelize-cli": "^5.5.1",
+    "superagent": "^5.2.2",
+    "supertest": "^4.0.2"
   },
   "dependencies": {
     "@babel/plugin-transform-runtime": "^7.9.6",
@@ -36,6 +38,7 @@
     "pg": "^8.0.3",
     "pg-hstore": "^2.3.3",
     "sequelize": "^5.21.7",
+    "sqlite3": "^4.2.0",
     "uuid": "^8.0.0",
     "yup": "^0.28.5"
   }
