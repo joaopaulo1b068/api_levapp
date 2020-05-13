@@ -1,16 +1,12 @@
 import { Router } from 'express'
 import { ShopController } from '../controllers/shop'
+import { AuthMiddleware as Auth } from '../middlewares/auth'
 
 const app = Router()
 
 app.post('/', ShopController.create )
-    // const shop = await Shop.create({
-    //     email: 'loja@loja.com'
-    // })
-    // res.send(shop)
 
-
-app.get('/', async (req, res) => {
+app.get('/', [Auth], async (req, res) => {
     res.status(501).send('GET ALL SHOPS')
 })
 
