@@ -1,6 +1,7 @@
-require('dotenv').config()
 import { Router } from './router/router'
+import { GetENV } from './utils/env'
 
-Router.listen(8000, () => {
-  console.log('express listening on 8000')
+const PORT = GetENV('PORT') || 8080
+Router.listen(PORT, () => {
+  console.log(`HTTP LISTENING ON ${PORT}`)
 })
