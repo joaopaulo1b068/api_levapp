@@ -1,4 +1,4 @@
-import { HashPass } from "../libs/password"
+import { HashPass } from "../src/libs/password"
 
 describe('Geracao de Hash de Senha', () => {
 

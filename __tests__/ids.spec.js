@@ -1,4 +1,4 @@
-import { GetID } from "../libs/ids"
+import { GetID } from "../src/libs/ids"
 
 describe('Geração de IDS', () => {
 
