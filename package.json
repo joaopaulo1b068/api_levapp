@@ -9,7 +9,7 @@
     "start": "npx sequelize-cli db:migrate && node -r dotenv/config dist/server.js",
     "dev": "concurrently \"babel src --watch --out-dir dist\"  \"nodemon -r dotenv/config dist/server.js\"",
     "test-dev": "jest --watch --runInBand --coverage",
-    "test": "jest --runInBand --coverage"
+    "test": "jest --runInBand --coverage --detectOpenHandles"
   },
   "author": "joaop",
   "license": "ISC",
