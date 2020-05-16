@@ -8,7 +8,7 @@
     "migrate": "npx sequelize-cli db:migrate",
     "start": "npx sequelize-cli db:migrate && node -r dotenv/config dist/server.js",
     "dev": "concurrently \"babel src --watch --out-dir dist\"  \"nodemon -r dotenv/config dist/server.js\"",
-    "test": "jest --watch"
+    "test": "jest --watch --runInBand --coverage"
   },
   "author": "joaop",
   "license": "ISC",

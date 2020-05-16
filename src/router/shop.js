@@ -6,6 +6,9 @@ const app = Router()
 
 app.post('/', ShopController.create )
 
+app.post('/login', ShopController.login )
+app.get('/confirm/:email', ShopController.confirmEmail )
+
 app.get('/', [Auth], async (req, res) => {
     res.status(501).send('GET ALL SHOPS')
 })

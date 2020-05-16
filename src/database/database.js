@@ -7,13 +7,24 @@ const db = GetENV('DATABASE_URL')
 class _Database {
 
   getInstance() {
-    return this.instance
+    return new Sequelize(db, {
+      pool: true,
+      logging: false
+    })
   }
 
   constructor() {
-    this.instance = new Sequelize(db)
+    this.instance = new Sequelize(db, {
+      pool: true,
+      logging: false
+    })
   }
 }
 
-export const Database = new _Database()
-Object.freeze(Database)
+// export const Database = new _Database()
+//Object.freeze(Database)
+
+export const Database = new Sequelize(db, {
+  pool: true,
+  logging: false
+}) 

@@ -1,7 +1,7 @@
 import { Database } from '../database/database'
 
 const { DataTypes } = require('sequelize')
-const seq = Database.getInstance()
+const seq = Database
 
 export const Deliverer = seq.define('deliverer', {
   email: {

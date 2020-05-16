@@ -7,3 +7,8 @@ export const CreateShopSchema = Yup.object().shape({
   password: Yup.string().required(),
   category: Yup.string().oneOf(ShopTypesAllowed).required()
 })
+
+export const LoginShopSchema = Yup.object().shape({
+  email: Yup.string().required(),
+  password: Yup.string().required(),
+})

@@ -35,7 +35,7 @@ const alphaNumeric = [
 /**
  * @param {number} n => tamanho do id 
  */
-export function GetID(n, type) {
+export function GetID(n, type = "numeric") {
   if (typeof n !== 'number' || n < 1) n = 1
 
   let iterable = numbers

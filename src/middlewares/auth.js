@@ -4,7 +4,7 @@ import { GetENV } from '../utils/env'
 export function AuthMiddleware (req, res, next) {
 
     const header = req.headers['authorization']
-    if (!header) return res.status(400).send('Missing Authorization Header')
+    if (!header) return res.status(403).send('Missing Authorization Header')
     
     const token = header.replace('Bearer ', '')
     jwt.verify(token, GetENV('JWT_SECRET'), (err, decoded) => {
