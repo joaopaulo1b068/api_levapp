@@ -50,3 +50,6 @@ jobs:
           DATABASE_URL: postgres://user:pass@postgres:5432/postgres
       - name: Test With JEST
         run: npm run test
+        env:
+          DATABASE_URL: postgres://user:pass@postgres:5432/postgres
+          JWT_SECRET: 4F38DB6280F4EDFC93CB7ED3A88EA58D1D1BC2D4
