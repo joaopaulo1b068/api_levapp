@@ -20,6 +20,7 @@ jobs:
           POSTGRES_USER: user
           POSTGRES_PASSWORD: pass
           POSTGRES_DATABASE: postgres
+          POSTGRES_HOST: localhost
           POSTGRES_PORT: 5432
         # Set health checks to wait until postgres has started
         options: >-
