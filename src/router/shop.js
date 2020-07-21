@@ -5,7 +5,6 @@ import { AuthMiddleware as Auth } from '../middlewares/auth'
 const app = Router()
 
 app.post('/', ShopController.create )
-
 app.post('/login', ShopController.login )
 app.get('/confirm/:email', ShopController.confirmEmail )
 

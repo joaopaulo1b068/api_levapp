@@ -2,7 +2,7 @@
   "name": "api_levapp",
   "version": "1.0.0",
   "description": "API principal LEVAPP -- admin, loja, cliente e entregas",
-  "main": "server.js",
+  "main": "dist/server.js",
   "scripts": {
     "build": "babel src --out-dir dist",
     "migrate": "npx sequelize-cli db:migrate",
@@ -39,7 +39,6 @@
     "pg": "^8.0.3",
     "pg-hstore": "^2.3.3",
     "sequelize": "^5.21.7",
-    "sqlite3": "^4.2.0",
     "uuid": "^8.0.0",
     "yup": "^0.28.5"
   }

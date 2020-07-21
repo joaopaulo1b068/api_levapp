@@ -1,10 +1,13 @@
 import { Router } from 'express'
-import { AuthMiddleware as Auth } from '../middlewares/auth'
+import { 
+    AuthMiddleware as Auth, 
+    ShopACLMiddleware as ShopACL 
+} from '../middlewares/auth'
 import { ProductController } from '../controllers/product'
 
 const app = Router()
 
-app.post('/', [Auth], ProductController.create )
+app.post('/', [Auth, ShopACL], ProductController.create )
 
 app.get('/', async (req, res) => {
     res.status(501).send('GET ALL PRODUCTS')
