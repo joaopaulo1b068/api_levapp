@@ -4,9 +4,9 @@
   "description": "API principal LEVAPP -- admin, loja, cliente e entregas",
   "main": "dist/server.js",
   "scripts": {
-    "build": "babel src --out-dir dist",
-    "migrate": "npx sequelize-cli db:migrate",
-    "start": "npx sequelize-cli db:migrate && node -r dotenv/config dist/server.js",
+    "build": "npx babel src --out-dir dist",
+    "postbuild": "npx knex migrate:latest",
+    "start": "node -r dotenv/config dist/server.js",
     "dev": "concurrently \"babel src --watch --out-dir dist\"  \"nodemon -r dotenv/config dist/server.js\"",
     "test-dev": "jest --watch --runInBand --coverage",
     "test": "jest --runInBand --coverage --detectOpenHandles"
@@ -35,8 +35,9 @@
     "express": "^4.17.1",
     "helmet": "^3.22.0",
     "jsonwebtoken": "^8.5.1",
+    "knex": "^0.21.5",
     "moment": "^2.25.3",
-    "pg": "^8.0.3",
+    "pg": "^8.3.3",
     "pg-hstore": "^2.3.3",
     "sequelize": "^5.21.7",
     "uuid": "^8.0.0",
